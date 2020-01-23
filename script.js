@@ -142,3 +142,18 @@ $(document).ready(function() {
       }
     });
   }
+
+  function saveCity(city) {
+    localStorage.setItem("cityList", JSON.stringify(cityArr));
+  }
+  
+  function loadCities() {
+    if (localStorage.getItem("cityList") === null) {
+      cityArr = [];
+    } else {
+      cityArr = JSON.parse(localStorage.getItem("cityList"));
+      cityArr.forEach(function(city) {
+        createCityBtns(city);
+      });
+    }
+  }
