@@ -157,3 +157,11 @@ $(document).ready(function() {
       });
     }
   }
+
+  function createCityBtns(city) {
+    let cityBtn = $("<button>").text(city);
+    cityBtn.addClass("btn btn-outline-info btn-block");
+    cityBtn.attr("data-city", city);
+  
+    $(".cities").append(cityBtn);
+  }
